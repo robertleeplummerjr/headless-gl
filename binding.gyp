@@ -1,7 +1,7 @@
 {
   'variables': {
     'platform': '<(OS)',
-    'angle_lib_dir': '<(module_root_dir)/deps/angle/out/Release'
+    'angle_lib_dir': '<(module_root_dir)/deps/angle/out/Debug'
   },
   'conditions': [
     ['platform == "mac"', {'variables': {'platform': 'darwin'}}],
@@ -11,7 +11,8 @@
     {
       'target_name': 'webgl',
       'defines': [
-        'VERSION=1.0.0'
+        'VERSION=1.0.0',
+        'EGL_EGL_PROTOTYPES=1'
       ],
       'sources': [
         'src/bindings.cc',

@@ -1,6 +1,6 @@
 {
   "name": "gl",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "Creates a WebGL context without a window",
   "main": "index.js",
   "directories": {
@@ -14,7 +14,8 @@
     "test": "standard | snazzy && tape test/*.js | faucet",
     "rebuild": "node-gyp rebuild --verbose",
     "prebuild": "prebuild --all --strip",
-    "install": "prebuild-install || node-gyp rebuild"
+    "download": "node scripts/download-angle.js",
+    "install": "npm run download && node-gyp rebuild"
   },
   "dependencies": {
     "bindings": "^1.2.1",
